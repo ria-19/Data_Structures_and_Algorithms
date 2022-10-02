@@ -1,21 +1,20 @@
-/*
-    Print 1 - N, with Backtracking concept
- */
 import java.util.Scanner;
 
-public class Problem4 {
+/*
+    Print N to 1, using Backtracking Concept
+ */
+public class Problem5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        func(n, n);
+        func(1, n);
     }
 
     public static void func(int i, int n){
-        // Base Case
-        if (i < 1){
+        if (i > n){
             return;
         }
-        func(i - 1, n);
+        func(i + 1, n);
         System.out.print(i + " ");
     }
 }
