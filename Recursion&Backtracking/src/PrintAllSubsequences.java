@@ -22,11 +22,11 @@ public class PrintAllSubsequences {
         }
 
         // Take the element at index ind
-        seq.add(arr[ind]);
+        seq.add(Integer.valueOf(arr[ind]));
         f(ind + 1, seq, n, arr);
 
         // Remove the element, for not taking the element at ind
-        seq.remove((Integer) arr[ind]);
+        seq.remove(Integer.valueOf(arr[ind]));
         f(ind + 1, seq, n, arr);
     }
 }

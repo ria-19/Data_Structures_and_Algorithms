@@ -17,21 +17,21 @@ public class SubsequenceSumK {
         f(0, sequence, arr, sum, 0);
     }
 
-    public static void f(int ind, ArrayList<Integer> seq, int[] arr, int sum, int s){
+    public static void f(int ind, ArrayList<Integer> seq, int[] arr, int gSum, int calcSum){
         if (ind >= arr.length){
-            if (sum == s){
+            if (calcSum == gSum){
                 System.out.println(seq);
             }
             return;
         }
 
         seq.add(Integer.valueOf(arr[ind]));
-        s += arr[ind];
-        f(ind + 1, seq, arr, sum, s);
+        calcSum += arr[ind];
+        f(ind + 1, seq, arr, gSum, calcSum);
 
         seq.remove(Integer.valueOf(arr[ind]));
-        s -= arr[ind];
-        f(ind + 1, seq, arr, sum, s);
+        calcSum -= arr[ind];
+        f(ind + 1, seq, arr, gSum, calcSum);
 
     }
 
